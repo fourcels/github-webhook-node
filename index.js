@@ -1,9 +1,16 @@
 var http = require('http')
 var path = require('path')
 var fs   = require('fs')
+
+if (!fs.existsSync('./config.json')) {
+  console.log('Please create a config.json');
+  return;
+}
+
 var { execFile } = require('child_process')
 var createHandler = require('github-webhook-handler')
-var handler = createHandler({ path: '/webhook', secret: 'gaohong230' })
+var config  = require('./config.json')
+var handler = createHandler(config)
 
 http.createServer(function (req, res) {
   handler(req, res, function (err) {

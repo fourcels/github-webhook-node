@@ -1,0 +1,4 @@
+{
+  "path": "/webhook",
+  "secret": "myscret"
+}
