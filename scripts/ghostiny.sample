@@ -1,4 +1,5 @@
 #!/bin/sh
-GIT_WORK_TREE=/home/kiyan/Documents/ghostiny
+GIT_WORK_TREE=/home/node/ghostiny
 cd $GIT_WORK_TREE
-git checkout -f master
+git reset --hard
+git pull origin master

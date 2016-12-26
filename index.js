@@ -7,7 +7,7 @@ if (!fs.existsSync('./config.json')) {
   return;
 }
 
-var { execFile } = require('child_process')
+var { exec } = require('child_process')
 var createHandler = require('github-webhook-handler')
 var config  = require('./config.json')
 var handler = createHandler(config)
@@ -31,11 +31,12 @@ handler.on('push', function (event) {
 
   var script =  `scripts/${event.payload.repository.name}`
   if (fs.existsSync(script)) {
-    execFile(script, (err, stdout, stderr) => {
+    exec(`sh ${script}`, (err, stdout, stderr) => {
       if (err) {
         throw err;
       }
       console.log(stdout);
+      console.log(stderr);
     })
   }
 
