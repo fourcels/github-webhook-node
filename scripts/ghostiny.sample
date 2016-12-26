@@ -1,0 +1,4 @@
+#!/bin/sh
+GIT_WORK_TREE=/home/kiyan/Documents/ghostiny
+cd $GIT_WORK_TREE
+git checkout -f master

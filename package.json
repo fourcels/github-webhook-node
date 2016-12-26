@@ -1,0 +1,9 @@
+{
+  "name": "github-webhook-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "github-webhook-handler": "^0.6.0"
+  }
+}
